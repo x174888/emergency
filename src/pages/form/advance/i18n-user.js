@@ -9,9 +9,14 @@ module.exports = {
       deleteConfirm: '是否要删除此行？',
       newMember: '新增成员',
       table: {
-        name: '成员姓名',
-        number: '工号',
-        department: '所属部门',
+        name: '姓名',
+        sex: '性别',
+        age:'年龄',
+        telephone:'电话',
+        idnumber:'身份证号',
+        work:'安全员',
+        department: '所属项目',
+        equipment:'绑定设备',
         operation: '操作',
       }
     },
@@ -24,9 +29,14 @@ module.exports = {
       deleteConfirm: '是否要刪除此行？',
       newMember: '新增成員',
       table: {
-        name: '成員姓名',
-        number: '工號',
-        department: '所屬部門',
+        name: '姓名',
+        sex: '性别',
+        age:'年龄',
+        telephone:'电话',
+        idnumber:'身份证号',
+        work:'安全员',
+        department: '所屬项目',
+        equipment:'绑定设备',
         operation: '操作',
       }
     },
@@ -40,8 +50,13 @@ module.exports = {
       newMember: 'new member',
       table: {
         name: 'Member Name',
-        number: 'Job Number',
+        sex: 'sex',
+        age:'age',
+        telephone:'telephone',
+        idnumber:'id number',
+        work:'work',
         department: 'Department',
+        equipment:'Binding device',
         operation: 'Operation',
       }
     }

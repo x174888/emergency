@@ -5,7 +5,7 @@
         <img alt="logo" class="logo" src="@/assets/img/logo.png" />
         <span class="title">{{systemName}}</span>
       </div>
-      <div class="desc">Ant Design 是西湖区最具影响力的 Web 设计规范</div>
+      <div class="desc">一期功能演示平台</div>
     </div>
     <div class="login">
       <a-form @submit="onSubmit" :form="form">
@@ -61,6 +61,7 @@
         <a-form-item>
           <a-button :loading="logging" style="width: 100%;margin-top: 24px" size="large" htmlType="submit" type="primary">登录</a-button>
         </a-form-item>
+        <!--
         <div>
           其他登录方式
           <a-icon class="icon" type="alipay-circle" />
@@ -68,6 +69,7 @@
           <a-icon class="icon" type="weibo-circle" />
           <router-link style="float: right" to="/dashboard/workplace" >注册账户</router-link>
         </div>
+        -->
       </a-form>
     </div>
   </common-layout>
@@ -121,7 +123,7 @@ export default {
         getRoutesConfig().then(result => {
           const routesConfig = result.data.data
           loadRoutes(routesConfig)
-          this.$router.push('/dashboard/workplace')
+          this.$router.push('/dashboard')
           this.$message.success(loginRes.message, 3)
         })
       } else {

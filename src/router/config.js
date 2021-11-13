@@ -28,32 +28,24 @@ const options = {
       children: [
         {
           path: 'dashboard',
-          name: 'Dashboard',
+          // Dashboard
+          name: '总控台',
           meta: {
             icon: 'dashboard'
           },
           component: BlankView,
           children: [
             {
-              path: 'workplace',
-              name: '工作台',
-              meta: {
-                page: {
-                  closable: false
-                }
-              },
-              component: () => import('@/pages/dashboard/workplace'),
-            },
-            {
-              path: 'analysis',
-              name: '分析页',
-              component: () => import('@/pages/dashboard/analysis'),
+              path: 'map',
+              name: '地图',
+              component: () => import('@/pages/map')
             }
-          ]
+          ],
         },
         {
           path: 'form',
-          name: '表单页',
+          // 表单页
+          name: '项目监控',
           meta: {
             icon: 'form',
             page: {
@@ -64,24 +56,23 @@ const options = {
           children: [
             {
               path: 'basic',
-              name: '基础表单',
-              component: () => import('@/pages/form/basic'),
+              // 基础表单
+              name: '设备监控',
+              component: () => import('@/pages/form/basic/shebeijiankong'),
             },
             {
               path: 'step',
-              name: '分步表单',
-              component: () => import('@/pages/form/step'),
+              // 分步表单
+              name: '人员管理',
+              component: () => import('@/pages/form/advance/renyuanguanli2'),
             },
-            {
-              path: 'advance',
-              name: '高级表单',
-              component: () => import('@/pages/form/advance'),
-            }
+
           ]
         },
         {
           path: 'list',
-          name: '列表页',
+          // 列表页
+          name: '统计管理',
           meta: {
             icon: 'table'
           },
@@ -89,58 +80,32 @@ const options = {
           children: [
             {
               path: 'query',
-              name: '查询表格',
+              // 查询表格
+              name: '实时通讯',
               meta: {
                 authority: 'queryForm',
               },
-              component: () => import('@/pages/list/QueryList'),
-            },
-            {
-              path: 'query/detail/:id',
-              name: '查询详情',
-              meta: {
-                highlight: '/list/query',
-                invisible: true
-              },
-              component: () => import('@/pages/Demo')
+              component: () => import('@/pages/list/shishitongxun'),
             },
             {
               path: 'primary',
-              name: '标准列表',
+              // 标准列表
+              name: '轨迹数据',
               component: () => import('@/pages/list/StandardList'),
             },
-            {
-              path: 'card',
-              name: '卡片列表',
-              component: () => import('@/pages/list/CardList'),
-            },
-            {
-              path: 'search',
-              name: '搜索列表',
-              component: () => import('@/pages/list/search/SearchLayout'),
-              children: [
-                {
-                  path: 'article',
-                  name: '文章',
-                  component: () => import('@/pages/list/search/ArticleList'),
-                },
-                {
-                  path: 'application',
-                  name: '应用',
-                  component: () => import('@/pages/list/search/ApplicationList'),
-                },
-                {
-                  path: 'project',
-                  name: '项目',
-                  component: () => import('@/pages/list/search/ProjectList'),
-                }
-              ]
-            }
           ]
         },
         {
+          path: 'xiangmuguanli',
+          name: '项目管理',
+          meta: {
+            icon: 'dashboard'
+          }
+        },
+        {
           path: 'details',
-          name: '详情页',
+          // 详情页
+          name: '设备管理',
           meta: {
             icon: 'profile'
           },
@@ -148,19 +113,22 @@ const options = {
           children: [
             {
               path: 'basic',
-              name: '基础详情页',
+              // 基础详情页
+              name: '设备管理',
               component: () => import('@/pages/detail/BasicDetail')
             },
             {
               path: 'advance',
-              name: '高级详情页',
+              // 高级详情页
+              name: '车辆管理',
               component: () => import('@/pages/detail/AdvancedDetail')
             }
           ]
         },
         {
           path: 'result',
-          name: '结果页',
+          // 结果页
+          name: '用户管理',
           meta: {
             icon: 'check-circle-o',
           },
@@ -168,44 +136,49 @@ const options = {
           children: [
             {
               path: 'success',
-              name: '成功',
+              // 成功
+              name: '子账号管理',
               component: () => import('@/pages/result/Success')
             },
             {
               path: 'error',
-              name: '失败',
+              // 失败
+              name: '角色权限管理',
               component: () => import('@/pages/result/Error')
             }
           ]
         },
         {
-          path: 'exception',
-          name: '异常页',
+          path: 'exception/404',
+          // 异常页
+          name: '组织机构管理',
           meta: {
             icon: 'warning',
           },
-          component: BlankView,
-          children: [
-            {
-              path: '404',
-              name: 'Exp404',
-              component: () => import('@/pages/exception/404')
-            },
-            {
-              path: '403',
-              name: 'Exp403',
-              component: () => import('@/pages/exception/403')
-            },
-            {
-              path: '500',
-              name: 'Exp500',
-              component: () => import('@/pages/exception/500')
-            }
-          ]
+          // component: BlankView,
+          // children: [
+          //   {
+          //     path: '404',
+          //     // Exp404
+          //     name: '组织机构管理',
+          //     component: () => import('@/pages/exception/404')
+          //   },
+          //   // {
+          //   //   path: '403',
+          //   //   name: 'Exp403',
+          //   //   component: () => import('@/pages/exception/403')
+          //   // },
+          //   // {
+          //   //   path: '500',
+          //   //   name: 'Exp500',
+          //   //   component: () => import('@/pages/exception/500')
+          //   // }
+          // ]
         },
         {
           path: 'components',
-          name: '内置组件',
+          // 内置组件
+          name: '系统设置',
           meta: {
             icon: 'appstore-o'
           },
@@ -213,12 +186,14 @@ const options = {
           children: [
             {
               path: 'taskCard',
-              name: '任务卡片',
+              // 任务卡片
+              name: '账号信息',
               component: () => import('@/pages/components/TaskCard')
             },
             {
               path: 'palette',
-              name: '颜色复选框',
+              // 颜色复选框
+              name: '工种设置',
               component: () => import('@/pages/components/Palette')
             },
             {
@@ -239,6 +214,7 @@ const options = {
           },
           component: () => import('@/pages/form/basic')
         },
+          /*
         {
           name: '带参菜单',
           path: 'router/query',
@@ -269,14 +245,16 @@ const options = {
             link: 'https://www.antdv.com/docs/vue/introduce-cn/'
           }
         },
-        {
-          name: '使用文档',
-          path: 'document',
-          meta: {
-            icon: 'file-word',
-            link: 'https://iczer.gitee.io/vue-antd-admin-docs/'
-          }
-        }
+        // {
+        //   name: '使用文档',
+        //   path: 'document',
+        //   meta: {
+        //     icon: 'file-word',
+        //     link: 'https://iczer.gitee.io/vue-antd-admin-docs/'
+        //   }
+        // }
+
+           */
       ]
     },
   ]
